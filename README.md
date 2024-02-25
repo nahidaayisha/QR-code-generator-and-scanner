@@ -51,6 +51,10 @@ The QR Linkify is a web-based application that provides functionalities for gene
 4. *Scanned Data Display*:
    - Open displayData.html in a web browser.
    - The table displays scanned data with corresponding Sl.No.
+     
+## Demo Video
+   This is the demo video of our project.It is a  loom screenrecorded video.Provided the link below
+   https://www.loom.com/share/01ab15ada334469e95bb83815ab11e00?sid=a8788f93-ba15-4aec-b58e-2e8013ef7eeb
 
 ## Contribution
 
