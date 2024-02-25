@@ -1,0 +1,80 @@
+<!-- displayData.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scanned Data Display</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9a602;
+        }
+
+        h1 {
+            color: #030303;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #030303;
+            padding: 10px;
+            text-align: left;
+        }
+
+        /* Add this style to align data under 'Student Details' */
+        td:nth-child(2) {
+            white-space: pre-line; /* Preserve line breaks */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Scanned Data</h1>
+
+    <table id="scannedDataTable">
+        <thead>
+            <tr>
+                <th>Sl.No</th>
+                <th>Student Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data will be dynamically added here -->
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Retrieve stored data array from local storage
+            const storedDataArray = JSON.parse(localStorage.getItem('scannedDataArray')) || [];
+
+            if (storedDataArray.length > 0) {
+                const scannedDataTable = document.getElementById('scannedDataTable');
+
+                storedDataArray.forEach((scannedData, index) => {
+                    const slNo = index + 1;
+
+                    const newRow = scannedDataTable.insertRow(-1);
+
+                    const slNoCell = newRow.insertCell(0);
+                    slNoCell.textContent = slNo;
+
+                    const scannedDataCell = newRow.insertCell(1);
+                    scannedDataCell.textContent = scannedData;
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
